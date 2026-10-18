@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7efe3">
+<meta name="description" content="Котик, розовые пионы и несколько слов для Яны от Егора.">
+<meta name="robots" content="noindex, nofollow">
+<title>Для Яны</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="styles.css">
+<script src="journey-model.js" defer></script>
+<script src="garden-world.js" defer></script>
+<script src="cat-character.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+<symbol id="pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+<symbol id="play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+<symbol id="icon-replay" viewBox="0 0 24 24"><path d="M5 8a8 8 0 1 1-1 7m1-7V3m0 5h5"/></symbol>
+</svg>
+<header class="masthead">
+<span class="dedication">Для Яны</span>
+<div class="quiet-controls">
+<button id="pause-toggle" class="quiet-button icon-only" type="button" aria-pressed="false" aria-label="Приостановить прогулку"><svg aria-hidden="true"><use href="#pause"></use></svg></button>
+</div>
+</header>
+<main>
+<section id="journey-view" class="journey-view" aria-labelledby="story-title">
+<canvas id="garden" aria-label="Рисованный сад с рыжим котиком. Все действия доступны кнопками ниже."></canvas>
+<div class="paper-grain" aria-hidden="true"></div>
+<div class="story-copy" id="story-copy">
+<h1 id="story-title">Кто-то к тебе <em>спешит.</em></h1>
+<p id="story-description" hidden></p>
+</div>
+<div id="world-controls" class="world-controls">
+<button id="bridge-hotspot" class="world-hotspot" type="button" aria-label="Положить доску через ручей" hidden><span class="hotspot-ring"></span><span class="hotspot-label">мостик</span></button>
+<button id="bell-hotspot" class="world-hotspot" type="button" aria-label="Позвонить в садовый колокольчик" hidden><span class="hotspot-ring"></span><span class="hotspot-label">позвонить</span></button>
+<button id="window-hotspot" class="world-hotspot" type="button" aria-label="Позвать котика к окну" hidden><span class="hotspot-ring"></span><span class="hotspot-label">тук-тук</span></button>
+</div>
+<div class="story-controls">
+<div class="control-copy"><p id="instruction">Проводишь его?</p><span id="small-note" hidden></span></div>
+<button id="story-action" class="primary-action" type="button" disabled><span>Знакомимся с садом…</span><svg aria-hidden="true"><use href="#arrow"></use></svg></button>
+</div>
+<div class="story-footer"><span id="chapter-label" hidden></span><button id="restart-small" type="button" hidden>С начала</button><span class="sender">от Егора</span></div>
+</section>
+<section id="finale" class="finale" aria-labelledby="final-title" hidden>
+<div class="bouquet-art">
+<img id="peony-art" src="assets/gift-peonies.png" alt="Букет пышных розовых пионов в крафтовой бумаге" width="1024" height="1536">
+<canvas id="bouquet-fallback" width="600" height="740" hidden aria-hidden="true"></canvas>
+<canvas id="final-cat" width="340" height="220" aria-hidden="true"></canvas>
+</div>
+<article class="personal-note">
+<h1 id="final-title" tabindex="-1">Яна,<br><em>у тебя всё получится.</em></h1>
+<p class="note-lead">Я в тебя верю.</p>
+<p>Даже если не сразу и не с первого раза — ты справишься. Шаг за шагом, в своём темпе.</p>
+<p>Пусть этот маленький курьер напомнит тебе об этом.</p>
+<p class="signature">Егор.</p>
+<button id="replay" class="text-action" type="button"><svg aria-hidden="true"><use href="#icon-replay"></use></svg>Ещё одна прогулка</button>
+</article>
+</section>
+</main>
+<p id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+<noscript><div class="noscript-note">Яна, у тебя всё получится. Я в тебя верю. Егор.<br>Чтобы познакомиться с котиком, включи JavaScript.</div></noscript>
+</body>
+</html>
